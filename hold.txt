@@ -1,0 +1,92 @@
+$_SESSION['aname']=$sow['tname'];
+$_SESSION['bname']=$tow['tname'];
+$_SESSION['cname']=$uow['tname'];
+$_SESSION['dname']=$vow['tname'];
+
+
+$sow=mysqli_fetch_assoc($mes);
+$tow=mysqli_fetch_assoc($res);
+$uow=mysqli_fetch_assoc($ees);
+$vow=mysqli_fetch_assoc($ges);
+
+
+$mes=mysqli_query($con,$cql);
+$ees=mysqli_query($con,$dql);
+$fes=mysqli_query($con,$eql);
+$ges=mysqli_query($con,$fql);
+
+
+$cql="SELECT * FROM courses INNER JOIN teachers ON courses.s1=teachers.subject WHERE s2='$s2'";
+$dql="SELECT * FROM courses INNER JOIN teachers ON courses.s1=teachers.subject WHERE s3='$s3'";
+$eql="SELECT * FROM courses INNER JOIN teachers ON courses.s1=teachers.subject WHERE s4='$s4'";
+$fql="SELECT * FROM courses INNER JOIN teachers ON courses.s1=teachers.subject WHERE s5='$s5'";
+
+
+
+<p><?php
+
+if(isset($_SESSION['bname']))
+{
+  echo $_SESSION['bname'];
+}
+
+
+
+ ?></p>
+
+
+
+ <p><?php
+
+ if(isset($_SESSION['aname']))
+ {
+   echo $_SESSION['aname'];
+ }
+
+
+
+  ?></p>
+
+
+
+
+
+
+  <p><?php
+
+  if(isset($_SESSION['cname']))
+  {
+    echo $_SESSION['cname'];
+  }
+
+
+
+   ?></p>
+
+
+
+
+   <p><?php
+
+   if(isset($_SESSION['dname']))
+   {
+     echo $_SESSION['dname'];
+   }
+
+
+
+    ?></p>
+
+
+
+
+
+
+
+
+
+
+Things We Can add
+1.Delete Course option.
+2.Make a page for teachers and Students separately*
+3.Add anchor tags for the teachers*
